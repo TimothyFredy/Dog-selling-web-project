@@ -1,0 +1,651 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #202124;
+  background: #ffffff;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.header {
+  min-height: 560px;
+  width: 100%;
+  padding: 64px clamp(24px, 8vw, 120px);
+  background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 360px);
+  grid-template-areas:
+    "title phone"
+    "buttons phone";
+  align-items: center;
+  column-gap: clamp(30px, 7vw, 110px);
+}
+
+.hea1 {
+  grid-area: title;
+  margin: 0;
+  align-self: end;
+  font-size: clamp(2.2rem, 5vw, 4.4rem);
+  line-height: 1.08;
+  font-weight: 700;
+}
+
+.align {
+  grid-area: buttons;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  align-self: start;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.button1,
+.button2 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 10px 18px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.button1 {
+  background: #ffffff;
+}
+
+.button2 {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.button1 img,
+.button2 img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.iphone {
+  grid-area: phone;
+  justify-self: center;
+  align-self: end;
+  width: min(100%, 330px);
+  max-height: 500px;
+  object-fit: contain;
+}
+
+/* ---------- Feature cards ---------- */
+.detailsSection {
+  width: 100%;
+}
+
+.cardDetails {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 80px 0 100px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(28px, 5vw, 70px);
+}
+
+.cardDetails > div {
+  min-width: 0;
+}
+
+.cardDetails h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 0;
+  font-size: clamp(1.25rem, 2vw, 1.7rem);
+}
+
+.cardDetails svg {
+  flex: 0 0 auto;
+}
+
+.cardDetails p {
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+
+.ThirdSection {
+  width: 100%;
+  background-color: rgba(248, 249, 250, 1);
+  padding: 80px 20px 60px;
+}
+
+.companyInfo {
+  width: min(1040px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.companyInfo > h2:first-child {
+  margin: 0 auto 28px;
+  max-width: 900px;
+  line-height: 1.45;
+  font-size: clamp(1.3rem, 2.3vw, 2rem);
+}
+
+.img1 {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.logo {
+  margin-top: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(30px, 7vw, 90px);
+  flex-wrap: wrap;
+}
+
+.img2 {
+  width: auto;
+  height: 32px;
+  max-width: 160px;
+  object-fit: contain;
+}
+
+/* ---------- Dog cards ---------- */
+.FourthSection {
+  width: 100%;
+  padding: 78px 20px 90px;
+}
+
+.MainContent {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.TitleOne {
+  margin: 0 0 10px;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.TitleTwo {
+  margin: 0;
+  font-weight: 500;
+  font-size: clamp(1.15rem, 2.2vw, 1.6rem);
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 44px;
+}
+
+.card4 {
+  min-width: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  border: 1px solid #d4d7dc;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+}
+
+.card4header {
+  width: 100%;
+  
+}
+
+.img7 {
+  display: block;
+  width: 100%;
+  height:500px;
+  aspect-ratio: 2/ 3;
+  object-fit:fit;
+}
+
+.card4content {
+  flex: 1;
+  padding: 18px 20px 8px;
+}
+
+.card4content h3 {
+  margin: 0;
+  line-height: 1.45;
+  font-size: 1.05rem;
+}
+
+.b2 {
+  display: block;
+  margin: 14px 20px 20px;
+  padding: 11px 16px;
+  border: 1px solid #202124;
+  border-radius: 9px;
+  color: #202124;
+  background: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 160ms ease, background-color 160ms ease, color 160ms ease;
+}
+
+.b2:hover {
+  transform: translateY(-2px);
+  background: #202124;
+  color: #ffffff;
+}
+.Footer {
+  width: 100%;
+  padding: 56px 20px 72px;
+  background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+}
+
+.LastSection {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.Sects {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
+  gap: clamp(35px, 7vw, 100px);
+}
+
+.Section h5 {
+  margin-top: 0;
+}
+
+
+.dogPage {
+  min-height: 100vh;
+  width: 100%;
+  background: #f7f8fa;
+  padding: 24px clamp(18px, 5vw, 72px) 70px;
+}
+
+.dogNav {
+  width: min(1180px, 100%);
+  margin: 0 auto 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #202124;
+  text-decoration: none;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-weight: 700;
+}
+
+.brand img {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+}
+
+.backLink {
+  color: #202124;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.backLink:hover {
+  text-decoration: underline;
+}
+
+.dogDetailCard {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(32px, 6vw, 80px);
+  align-items: center;
+  padding: clamp(22px, 4vw, 48px);
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+}
+
+.dogImagePanel {
+  overflow: hidden;
+  border-radius: 14px;
+  background: #eef0f2;
+}
+
+.dogImagePanel img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2/ 3;
+  object-fit: fit;
+}
+
+.dogInformation {
+  min-width: 0;
+}
+
+.smallLabel {
+  margin: 0 0 7px;
+  color: #69707a;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.dogInformation h1 {
+  margin: 0 0 34px;
+  font-size: 40px;
+}
+
+.dogDescription {
+  margin: 0;
+  line-height: 1.7;
+  font-size: 20px;
+}
+
+.purchaseControls {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  margin-top: 34px;
+  flex-wrap: wrap;
+}
+
+.priceBox,
+.quantityButton,
+.addCartButton {
+  min-height: 48px;
+  border: 1px solid #c8ccd2;
+  border-radius: 10px;
+}
+
+.priceBox {
+  display: inline-flex;
+  align-items: center;
+  padding: 11px 16px;
+  background: #f7f8fa;
+  font-weight: 700;
+}
+
+.quantityButton {
+  width: 50px;
+  background: #ffffff;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.addCartButton {
+  padding: 11px 22px;
+  background: #202124;
+  color: #ffffff;
+  border-color: #202124;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cartSection {
+  width: min(900px, 100%);
+  margin: 38px auto 0;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #dfe2e6;
+  border-radius: 14px;
+}
+
+.cartSection h2 {
+  margin: 0 0 18px;
+}
+
+.emptyCart {
+  margin: 0;
+  color: #69707a;
+}
+
+.cartRow {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+}
+
+.cartRow > img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.cartName {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cartName span {
+  color: #69707a;
+}
+
+.cartQuantity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cartQuantity button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #c8ccd2;
+  border-radius: 50%;
+  background: #ffffff;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.notFound {
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 900px) {
+  .header {
+    min-height: auto;
+    grid-template-columns: minmax(0, 1fr) minmax(190px, 270px);
+    padding-top: 50px;
+    padding-bottom: 0;
+    column-gap: 28px;
+  }
+
+  .cardDetails {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    padding: 60px 0 70px;
+  }
+
+  .cardsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .LastSection {
+    flex-direction: column;
+  }
+
+  .dogDetailCard {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 620px) {
+  .header {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "buttons"
+      "phone";
+    text-align: center;
+    padding: 42px 18px 0;
+  }
+
+  .hea1 {
+    align-self: auto;
+  }
+
+  .align {
+    justify-content: center;
+    align-self: auto;
+    margin-top: 24px;
+  }
+
+  .button1,
+  .button2 {
+    flex: 1 1 140px;
+    max-width: 180px;
+  }
+
+  .iphone {
+    width: min(78vw, 290px);
+    margin-top: 28px;
+  }
+
+  .ThirdSection {
+    padding-top: 60px;
+  }
+
+  .logo {
+    gap: 28px;
+  }
+
+  .img2 {
+    height: 27px;
+    max-width: 120px;
+  }
+
+  .FourthSection {
+    padding: 60px 16px 70px;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .Sects {
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 50px;
+  }
+
+  .dogPage {
+    padding: 18px 14px 50px;
+  }
+
+  .dogNav {
+    align-items: flex-start;
+  }
+
+  .brand img {
+    width: 46px;
+    height: 46px;
+  }
+
+  .backLink {
+    font-size: 0.9rem;
+  }
+
+  .dogDetailCard {
+    padding: 16px;
+    gap: 26px;
+  }
+
+  .dogInformation h1 {
+    margin-bottom: 26px;
+  }
+
+  .purchaseControls {
+    display: grid;
+    grid-template-columns: 1fr 50px;
+  }
+
+  .addCartButton {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  .cartRow {
+    grid-template-columns: 58px minmax(0, 1fr);
+  }
+
+  .cartRow > img {
+    width: 58px;
+    height: 58px;
+  }
+
+  .cartQuantity {
+    grid-column: 1 / -1;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 420px) {
+  .Sects {
+    grid-template-columns: 1fr;
+  }
+
+  .dogNav {
+    flex-direction: column;
+  }
+}
