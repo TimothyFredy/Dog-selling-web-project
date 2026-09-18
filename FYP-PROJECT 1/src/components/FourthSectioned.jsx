@@ -9,7 +9,7 @@ function createCard(dog) {
   );
 }
 
-function FourthSection({refreshKey}) {
+function FourthSectioned({refreshKey}) {
   
   const [dogs, getDogMethod] = useState([]);
   useEffect(() => {
@@ -27,13 +27,10 @@ function FourthSection({refreshKey}) {
   return (
     <section className="FourthSection">
       <div className="MainContent">
-        <h1 className="TitleOne">What we offer is</h1>
-        <h2 className="TitleTwo">Simple and affordable pricing for dogs.</h2>
         <div className="cardsGrid">{dogs.map(createCard)}</div>
-        
       </div>
     </section>
   );
 }
 
-export default FourthSection;
+export default FourthSectioned;

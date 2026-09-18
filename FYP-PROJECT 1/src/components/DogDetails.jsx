@@ -1,38 +1,24 @@
-import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
-import description from "./Description";
+import { useState} from "react";
+import { Link, useLocation} from "react-router-dom";
 
-const API_URL= import.meta.env.VITE_API_URL;
 
 function DogDetails() {
-  const [dogs, getDogMethod] = useState([]);
-  useEffect(() => {
-    fetch(`${API_URL}/dogs`)
-      .then((response) => response.json())
-      .then((data) => {
-        //console.log(data);
-        getDogMethod(data.data);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  }, []);
-
-  const { dogId } = useParams();
-  const dog = dogs.find((item) => item.id === Number(dogId));
+  const location = useLocation();
+  const dog = location.state?.dog;
+  
   const [quantity, setQuantity] = useState(0);
 
   if (!dog) {
     return (
       <main className="dogPage notFound">
         <h1>Dog not found</h1>
-        <Link className="backLink" to="/">
+        <Link className="backLink" to="/homepage">
           Back to dogs
         </Link>
       </main>
     );
   }
-const dogDescription = description.find((item) =>item.id===dog.id);
+
   function addToCart() {
     setQuantity((currentQuantity) => currentQuantity + 1);
   }
@@ -50,7 +36,7 @@ const dogDescription = description.find((item) =>item.id===dog.id);
 
       <section className="dogDetailCard">
         <div className="dogImagePanel">
-          <img className="img7" src={dog.image_url} alt={dog.name} />
+          <img className="img8" src={dog.image_url} alt={dog.name} />
         </div>
 
         <div className="dogInformation">
@@ -58,10 +44,10 @@ const dogDescription = description.find((item) =>item.id===dog.id);
           <h1>{dog.name}</h1>
 
           <p className="smallLabel">Description</p>
-          <p className="dogDescription">{dogDescription.info}</p>
+          <p className="dogDescription">{dog.details}</p>
 
           <div className="purchaseControls">
-            <span className="priceBox">{dog.price}</span>
+            <span className="priceBox">{dog.currency_code} {Number(dog.price).toLocaleString()}</span>
 
             <button className="addCartButton" type="button" onClick={addToCart}>
               Add to cart
@@ -87,7 +73,8 @@ const dogDescription = description.find((item) =>item.id===dog.id);
             <img src={dog.image_url} alt="" />
             <div className="cartName">
               <strong>{dog.name} </strong>
-              <span>{dog.price*quantity}</span>
+              <span>{dog.currency_code}</span>
+              <span>{Number(dog.price*quantity).toLocaleString()}</span>
             </div>
             <div className="cartQuantity">
               <span>Qty: {quantity}</span>
@@ -100,9 +87,13 @@ const dogDescription = description.find((item) =>item.id===dog.id);
               </button>
             </div>
           </div>
+          
         )}
         
       </section>
+      <div className="CartDiv">
+      <button className="toCart"> Proceed to Cart </button>
+      </div>
     </main>
   );
 }

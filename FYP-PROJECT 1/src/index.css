@@ -240,7 +240,7 @@ img {
 .img7 {
   display: block;
   width: 100%;
-  height:500px;
+  height:300px;
   aspect-ratio: 2/ 3;
   object-fit:fit;
 }
@@ -267,6 +267,7 @@ img {
   text-align: center;
   text-decoration: none;
   transition: transform 160ms ease, background-color 160ms ease, color 160ms ease;
+
 }
 
 .b2:hover {
@@ -416,6 +417,7 @@ img {
   padding: 11px 16px;
   background: #f7f8fa;
   font-weight: 700;
+
 }
 
 .quantityButton {
@@ -648,4 +650,562 @@ img {
   .dogNav {
     flex-direction: column;
   }
+}
+.Newpost{
+  color: #202124;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+
+.addDogArea {
+  width: min(1180px, calc(100% - 40px));
+  margin: 10 auto;
+  padding: 50px 0px 30px;
+
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.floatingAddButton {
+  border: none;
+  border-radius: 50px;
+
+  padding: 14px 24px;
+
+  background: #202124;
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  cursor: pointer;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+
+  transition:
+    transform 0.2s ease,
+
+    box-shadow 0.2s ease;
+
+    margin-left:20px;
+}
+
+
+.floatingAddButton:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+}
+
+.plusIcon {
+  font-size: 26px;
+  line-height: 1;
+}
+
+
+
+
+.modalOverlay {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.6);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+
+  z-index: 2000;
+}
+
+
+
+
+.modalBox {
+  width: 100%;
+  max-width: 550px;
+
+  max-height: 90vh;
+  overflow-y: auto;
+
+  background: white;
+
+  border-radius: 20px;
+
+  padding: 35px;
+
+  position: relative;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+
+.formHeading {
+  margin-bottom: 25px;
+}
+
+.formHeading h2 {
+  margin: 0 0 8px;
+
+  font-size: 28px;
+}
+
+.formHeading p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 14px;
+}
+
+
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+
+  margin-bottom: 18px;
+}
+
+.formGroup label {
+  font-size: 14px;
+  font-weight: 600;
+
+  color: #333333;
+}
+
+.formGroup input,select ,
+.formGroup textarea {
+  width: 100%;
+
+  padding: 13px 14px;
+
+  border: 1px solid #d2d5da;
+
+  border-radius: 10px;
+
+  font-size: 15px;
+
+  outline: none;
+
+  font-family: inherit;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.formGroup input :focus,
+.formGroup textarea:focus {
+  border-color: #202124;
+
+  box-shadow:
+    0 0 0 3px rgba(32, 33, 36, 0.1);
+}
+
+.formGroup textarea {
+  min-height: 100px;
+
+  resize: vertical;
+}
+
+
+.formRow {
+  display: grid;
+
+  grid-template-columns: 2fr 1fr;
+
+  gap: 15px;
+}
+
+
+
+
+.formButtons {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  margin-top: 10px;
+}
+
+.cancelButton,
+.submitDogButton {
+  border-radius: 10px;
+
+  padding: 12px 20px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  font-size: 15px;
+}
+
+.cancelButton {
+  border: 1px solid #d1d5db;
+
+  background: white;
+
+  color: #202124;
+}
+
+.cancelButton:hover {
+  background: #f3f4f6;
+}
+
+.submitDogButton {
+  border: none;
+
+  background: #202124;
+
+  color: white;
+}
+
+.submitDogButton:hover {
+  background: #3b3b3b;
+}
+
+
+
+
+@media (max-width: 600px) {
+
+  .modalBox {
+    padding: 28px 20px;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .formButtons {
+    flex-direction: column-reverse;
+  }
+
+  .cancelButton,
+  .submitDogButton {
+    width: 100%;
+  }
+
+  .addDogArea {
+    justify-content: center;
+  }
+
+  .floatingAddButton {
+    width: calc(100% - 20px);
+
+    justify-content: center;
+  }
+}
+.deleteButton {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.deleteButton:hover {
+  background-color: #b02a37;
+}
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.6);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+}
+
+.deleteModal {
+  background: white;
+
+  width: 90%;
+  max-width: 460px;
+
+  padding: 30px;
+
+  border-radius: 20px;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+.deleteModal h2 {
+  margin-bottom: 8px;
+  font-size: 26px;
+}
+
+.deleteModal p {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.deleteInputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.deleteInputGroup label {
+  font-weight: 600;
+}
+
+.deleteInputGroup input {
+  width: 100%;
+
+  padding: 13px;
+
+  border: 1px solid #ccc;
+  border-radius: 8px;
+
+  font-size: 15px;
+
+  box-sizing: border-box;
+}
+
+.deleteInputGroup input:focus {
+  outline: none;
+  border-color: #333;
+}
+
+.deleteButtons {
+  margin-top: 25px;
+
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.cancelDelete {
+  padding: 11px 20px;
+
+  background: white;
+  border: 1px solid #ccc;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+.confirmDelete {
+  padding: 11px 20px;
+
+  background: #c62828;
+  color: white;
+
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+.confirmDelete:hover {
+  background: #a51e1e;
+}
+.PriceDeco{
+  margin-top:10px;
+  font-size:20px;
+  font-weight:bold;
+  color:#2E7D32;
+}
+select{
+  background-color:white;
+  color:#333333;
+}
+.toCart{
+  margin-top:100px;
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-left:60px;
+  padding-right:60px;
+  font-size:25px;
+border: 2px solid black;
+border-radius:8px;
+color:white;
+background-color:black;
+}
+.CartDiv{
+  display:flex;
+  justify-content:flex-end;
+
+}
+.img8{
+  display: block;
+  width: 100%;
+  height:400px;
+
+  object-fit:fit;
+}
+.container{
+  min-height:100vh;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  box-sizing:border-box;
+  background-color:black;
+  
+  
+}
+.Section{
+display:flex;
+flex-direction:column;
+}
+
+.loginButton{
+  margin-top:10px;
+}
+.container form {
+  width:100%;
+  max-width:400px;
+  padding:30px;
+background-color:white;
+  border-radius:15px;
+}
+
+.bar{
+  padding-top:10px;
+  padding-bottom:10px;
+  padding-left:10px;
+  border: 1px solid black;
+  border-radius:5px;
+}
+.loginButton{
+  padding-left:150px;
+  padding-right:150px;
+ padding-top:7px;
+  padding-bottom:7px;
+  border-radius:5px;
+  background-color:orangered; 
+  margin-top:15px;
+
+}
+.p30{
+  font-size:40px;
+  font-weight:bold;
+  text-align:center;
+  margin-bottom:10px;
+}
+.registerLink{
+  text-decoration:underline;
+  text-align:right;
+  color:orangered;
+  border:none;
+  background-color:white;
+  margin-top:5px;
+}
+.registerButton{
+  padding-left:150px;
+  padding-right:130px;
+ padding-top:7px;
+  padding-bottom:7px;
+  border-radius:5px;
+  background-color:orangered; 
+  margin-top:15px;
+}
+.loginError{
+  color:red;
+  font-size:14px;
+}
+.floatingButton {
+  border: none;
+  border-radius: 50px;
+
+  padding: 14px 24px;
+
+  background: #202124;
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+
+  transition:
+    transform 0.2s ease,
+
+    box-shadow 0.2s ease;
+    margin-bottom:40px;
+}
+.b20{
+  display:flex;
+  flex-direction:column;
+  justify-content:left;
+  align-items: center;
+}
+.loginOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  background-color: rgba(0, 0, 0, 0.6);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+}
+
+.loginPopup {
+  position: relative;
+
+  background-color: white;
+
+  width: 90%;
+  max-width: 420px;
+
+  padding: 30px;
+
+  border-radius: 15px;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.closeLogin {
+  position: absolute;
+
+  top: 10px;
+  right: 15px;
+
+  border: none;
+  background: transparent;
+
+  font-size: 25px;
+  cursor: pointer;
 }

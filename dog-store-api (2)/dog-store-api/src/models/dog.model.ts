@@ -17,6 +17,7 @@ export interface CreateDogData {
   name: string;
   imageUrl?: string;
   details?: string;
+  
   price: number;
   currencyCode?: string;
 }
