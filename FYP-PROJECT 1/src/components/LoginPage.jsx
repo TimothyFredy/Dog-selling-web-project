@@ -20,7 +20,7 @@ function LoginPage({ onClose, onRegister }) {
     if (Email === correctEmail && Password === correctPassword) {
       sessionStorage.setItem("loggedIn", "true");
       toast.success("login was successful");
-      onClose();
+      onClose?.();
       navigate("/CardList");
     } else if (Email !== correctEmail && Email !== normalUser) {
       toast.error("Incorrect email Address");
@@ -29,7 +29,7 @@ function LoginPage({ onClose, onRegister }) {
     } else if (Email === normalUser && Password === normalUserPassword) {
       sessionStorage.setItem("loggedIn", "true");
       toast.success("Login was successful");
-      onClose();
+      onClose?.();
       navigate("/CardList");
     }
   }
